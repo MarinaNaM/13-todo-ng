@@ -1,0 +1,15 @@
+<form [formGroup]="taskData">
+  <input
+    id="title"
+    type="text"
+    FormControlName="title"
+    placeholder="Indique la tarea"
+  />
+  <input
+    id="responsible"
+    type="text"
+    FormControlName="responsible"
+    placeholder="Responsable de la tarea"
+  />
+  <button type="button" (click)="handleSubmit(taskData.value)">Añadir</button>
+</form>
