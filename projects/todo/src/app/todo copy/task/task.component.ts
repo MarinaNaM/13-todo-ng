@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TaskModel } from '../../models/task';
+import { TaskStateService } from '../../services/task-state.service';
 
 @Component({
   selector: 'isdi-task',
@@ -8,21 +9,15 @@ import { TaskModel } from '../../models/task';
 })
 export class TaskComponent implements OnInit {
   @Input() task!: TaskModel;
-  @Output() onDelete: EventEmitter<number>;
-  @Output() onChange: EventEmitter<TaskModel>;
-  constructor() {
-    this.onDelete = new EventEmitter();
-    this.onChange = new EventEmitter();
-  }
+  constructor(private taskState: TaskStateService) {}
 
   ngOnInit(): void {}
 
-  deleteHandle(id: TaskModel['id']): void {
-    this.onDelete.next(id);
+  deleteHandle(): void {
+    this.taskState.deleteTask(this.task.id);
   }
 
   changeHandle() {
-    this.task.isCompleted = !this.task.isCompleted;
-    this.onChange.next(this.task);
+    this.taskState.updateTask(this.task);
   }
 }

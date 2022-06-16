@@ -1,4 +1,6 @@
 export interface iTaskData {
-  title?: string | null | undefined;
-  responsible?: string | null | undefined;
+  id?: number;
+  title: string;
+  responsible: string;
+  isCompleted?: boolean;
 }

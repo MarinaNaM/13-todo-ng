@@ -1,0 +1,9 @@
+<p>Rellene los siguientes campos para añadir una tarea</p>
+
+<input type="text" placeholder="Indique la tarea" [(ngModel)]="task.title" />
+<input
+  type="text"
+  placeholder="Responsable de la tarea"
+  [(ngModel)]="task.responsible"
+/>
+<button (click)="handleSubmit()">Añadir</button>

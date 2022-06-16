@@ -12,4 +12,4 @@ import { FormsModule } from '@angular/forms';
   declarations: [TodoComponent, ListComponent, AddComponent, TaskComponent],
   imports: [CommonModule, TodoRoutingModule, FormsModule],
 })
-export class TodoModule {}
+export class TodoSrvModule {}

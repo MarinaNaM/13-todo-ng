@@ -1,12 +1,10 @@
 <p>
   <input
     type="checkbox"
-    name=""
-    id=""
-    [value]="task.isCompleted"
+    [(ngModel)]="task.isCompleted"
     (change)="changeHandle()"
   />
   <span>{{ task.title }}</span> -
   <span>{{ task.responsible }}</span>
-  <span (click)="deleteHandle(task.id)">🗑️</span>
+  <span (click)="deleteHandle()">🗑️</span>
 </p>

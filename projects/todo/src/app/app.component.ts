@@ -4,6 +4,7 @@ import { iMenuOptions } from './interfaces/menu-options';
 export const MENU_OPTIONS: Array<iMenuOptions> = [
   { path: 'home', label: 'Home' },
   { path: 'todo', label: 'Tasks' },
+  { path: 'todosrv', label: 'Tasks by service' },
   { path: 'about', label: 'About' },
 ];
 

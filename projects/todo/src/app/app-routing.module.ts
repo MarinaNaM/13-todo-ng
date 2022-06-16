@@ -19,6 +19,11 @@ const routes: Routes = [
   {
     path: MENU_OPTIONS[2].path,
     loadChildren: () =>
+      import('./todo copy/todo.module').then((m) => m.TodoSrvModule),
+  },
+  {
+    path: MENU_OPTIONS[3].path,
+    loadChildren: () =>
       import('./about/about.module').then((m) => m.AboutModule),
   },
   {

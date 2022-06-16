@@ -3,18 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'isdi-home',
   template: `
-    <p>
-      home works!
-    </p>
+    <h2>Home</h2>
+    <isdi-greetings></isdi-greetings>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class HomeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

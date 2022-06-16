@@ -8,7 +8,11 @@ import { TaskModel } from '../models/task';
   template: `
     <h2>todos</h2>
     <isdi-add (onSubmit)="onSubmitHandle($event)"></isdi-add>
-    <isdi-list [tasks]="tasks" (onDelete)="onDeleteHandle($event)"></isdi-list>
+    <isdi-list
+      [tasks]="tasks"
+      (onDelete)="onDeleteHandle($event)"
+      (onChange)="onChangeHandle($event)"
+    ></isdi-list>
   `,
   styles: [],
 })
@@ -24,9 +28,11 @@ export class TodoComponent implements OnInit {
     this.tasks = this.tasks.filter((item) => item.id !== id);
   }
 
-  onSubmitHandle(data: iTaskData) {
-    this.tasks.push(
-      new TaskModel(data.title as string, data.responsible as string)
-    );
+  onSubmitHandle(data: TaskModel) {
+    this.tasks.push(data);
+  }
+
+  onChangeHandle(task: TaskModel) {
+    this.tasks = this.tasks.map((item) => (item.id === task.id ? task : item));
   }
 }
